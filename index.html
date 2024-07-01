@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sum Of Two Numbers</title>
+    <style>
+       
+body {
+  background: #dde2fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 10px;
+}
+
+.container {
+  background: #f5ae5d;
+  padding: 40px;
+  border-radius: 35px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  width: 400px;
+  transition: transform 0.5s;
+}
+
+.container:hover {
+  transform: translateY(-15px);
+}
+
+.heading {
+  font-size: 2.5rem;
+  color: #fffffe;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: calc(100% - 20px);
+  padding: 15px;
+  margin: 15px 0;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.btn {
+  background-color: #73d34d;
+  color: #232946;
+  width: 160px;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+  background: linear-gradient(to right, #185a9d, #43cea2);
+  transform: scale(1.05);
+}
+
+.result {
+  margin-top: 30px;
+  font-size: 2rem;
+  color: #fff;
+}
+    </style>
+  </head>
+  <body>
+    
+    <div class="container">
+        <h1 class="heading">Add Number</h1>
+        <input type="number" id="num1" class="input-field" placeholder="Enter First Number">
+        <input type="number" id="num2" class="input-field" placeholder="Enter Second Number">
+        <p class="result" id="answer"> </p>
+        <br>
+        
+        <button class="btn" type="button" onclick="calculateSum()">Calculate Sum</button>
+        <button class="btn" type="button" onclick="resetSum()">Reset Sum</button>
+    </div>
+
+    <script>
+
+const inputBox1 = document.getElementById("num1");
+        const inputBox2 = document.getElementById("num2");
+        const answerText = document.getElementById("answer");
+
+        function calculateSum() {
+            const val1 = parseFloat(inputBox1.value);
+            const val2 = parseFloat(inputBox2.value);
+            const sum = val1 + val2;
+                answerText.innerText = `Answer: ${sum}`;
+            }
+
+        function resetSum() {
+            inputBox1.value = "";
+            inputBox2.value = "";
+            answerText.innerText = `Answer: `;
+        }
+    </script>
+  </body>
+</html>
